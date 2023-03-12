@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.noesis.noesisgui": "file:C:/Users/zp605/Downloads/NoesisGUI-Unity-3.2.0b7-Indie",
     "com.unity.collab-proxy": "2.0.1",
     "com.unity.connect.share": "4.2.3",
     "com.unity.feature.development": "1.0.1",
