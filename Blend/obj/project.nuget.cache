@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "1UQMZnvoebu2wE+nfnx6zTZgCarIr6X2wwEiJ9LB1QDJ8kY+i+dIzPU2ixZiTlaQoJBtMUwfqH0jzjZhNrlCWQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\zp605\\RiveNoesisExample\\RiveNoesisExample-blend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\zp605\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.37\\microsoft.xaml.behaviors.wpf.1.1.37.nupkg.sha512",
+    "C:\\Users\\zp605\\.nuget\\packages\\noesis.gui\\3.1.7\\noesis.gui.3.1.7.nupkg.sha512",
+    "C:\\Users\\zp605\\.nuget\\packages\\noesis.gui.extensions\\3.0.19\\noesis.gui.extensions.3.0.19.nupkg.sha512",
+    "C:\\Users\\zp605\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\zp605\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\zp605\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\zp605\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

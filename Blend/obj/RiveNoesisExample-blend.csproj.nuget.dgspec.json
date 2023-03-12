@@ -1,0 +1,65 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\zp605\\RiveNoesisExample\\RiveNoesisExample-blend.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\zp605\\RiveNoesisExample\\RiveNoesisExample-blend.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\zp605\\RiveNoesisExample\\RiveNoesisExample-blend.csproj",
+        "projectName": "RiveNoesisExample-blend",
+        "projectPath": "C:\\Users\\zp605\\RiveNoesisExample\\RiveNoesisExample-blend.csproj",
+        "packagesPath": "C:\\Users\\zp605\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zp605\\RiveNoesisExample\\Blend\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\zp605\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "Noesis.GUI": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Noesis.GUI.Extensions": {
+              "target": "Package",
+              "version": "[3.0.19, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

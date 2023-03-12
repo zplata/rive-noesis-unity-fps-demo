@@ -1,10 +1,14 @@
-<UserControl x:Class="RiveNoesisExample.RiveNoesisExampleMainView"
+<UserControl
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"> 
-  <Border Background="DodgerBlue" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="50,20">
-    <StackPanel>
-      <TextBlock Text="Hello World" FontSize="30" Foreground="White"/>
-      <Button Content="Button" Margin="0,10,0,0"/>
-    </StackPanel>
-  </Border>
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:NoesisGUIExtensions="clr-namespace:NoesisGUIExtensions;assembly=Noesis.GUI.Extensions" mc:Ignorable="d" x:Class="RiveNoesisExample.RiveNoesisExampleMainView"
+  d:DesignWidth="1830.948" d:DesignHeight="1071.713">
+    <Grid>
+        <NoesisGUIExtensions:RiveControl x:Name="Health" Source="game_health.riv" HorizontalAlignment="Left" Height="205.6" Margin="100,0,0,70" VerticalAlignment="Bottom" Width="440.8">
+            <NoesisGUIExtensions:RiveInput InputName="health" InputValue="{Binding Health}" />
+        </NoesisGUIExtensions:RiveControl>
+        <NoesisGUIExtensions:RiveControl x:Name="Ammo" Source="game_ammo.riv" HorizontalAlignment="Right" Height="205.6" Margin="0,0,100,70" VerticalAlignment="Bottom" Width="440.8">
+            <NoesisGUIExtensions:RiveInput InputName="ammo" InputValue="{Binding Ammo}" />
+        </NoesisGUIExtensions:RiveControl>
+        <NoesisGUIExtensions:RiveControl x:Name="Frame" Source="game_frame.riv"></NoesisGUIExtensions:RiveControl>
+    </Grid>
 </UserControl>
