@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\zp605\RiveNoesisExample\Blend\obj\Debug\
+C:\Users\zp605\RiveNoesisExample\Blend\obj\Release\
 RiveNoesisExample
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\zp605\RiveNoesisExample\Blend\App.xaml
 1225028722
 
