@@ -95,8 +95,7 @@ public class MainHudViewModel : MonoBehaviour, INotifyPropertyChanged
             if (this.enemiesLeft == value) return;
             this.enemiesLeft = value;
             // Perhaps we can catch this event in XAML to then fire the Rive trigger?
-            OnPropertyChanged("EnemiesLeftChange");
+            OnPropertyChanged();
         }
     }
-
 }

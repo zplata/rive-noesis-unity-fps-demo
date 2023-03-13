@@ -19,5 +19,10 @@
         <NoesisGUIExtensions:RiveControl x:Name="EnemiesLeft" Source="game_enemies_left_v2.riv">
             <NoesisGUIExtensions:RiveInput x:Name="EnemiesLeftInput" InputName="Enemies Left" InputValue="{Binding EnemiesLeft}" />
         </NoesisGUIExtensions:RiveControl>
+        <b:Interaction.Triggers>
+            <b:PropertyChangedTrigger Binding="{Binding InputValue, ElementName=EnemiesLeftInput}">
+                <NoesisGUIExtensions:RiveTriggerAction TargetName="EnemiesLeft" TriggerName="Launch Text" />
+            </b:PropertyChangedTrigger>
+        </b:Interaction.Triggers>
     </Grid>
 </UserControl>
