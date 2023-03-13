@@ -14,6 +14,8 @@ namespace Unity.FPS.Gameplay
         [Tooltip("Start sending notification about remaining enemies when this amount of enemies is left")]
         public int NotificationEnemiesRemainingThreshold = 3;
 
+        public int EnemiesLeft = 2;
+
         int m_KillTotal;
 
         protected override void Start()
@@ -42,6 +44,8 @@ namespace Unity.FPS.Gameplay
                 KillsToCompleteObjective = evt.RemainingEnemyCount + m_KillTotal;
 
             int targetRemaining = MustKillAllEnemies ? evt.RemainingEnemyCount : KillsToCompleteObjective - m_KillTotal;
+
+            EnemiesLeft = targetRemaining;
 
             // update the objective text according to how many enemies remain to kill
             if (targetRemaining == 0)

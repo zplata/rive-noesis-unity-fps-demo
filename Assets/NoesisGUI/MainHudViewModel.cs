@@ -15,11 +15,15 @@ public class MainHudViewModel : MonoBehaviour, INotifyPropertyChanged
 
     private float health;
     private float ammo;
+    private int enemiesLeft;
 
     void Start()
     {
         GetComponent<NoesisView>().Content.DataContext = this;
         playerhealth = actorsManager.Player.GetComponent<Health>();
+        EventManager.AddListener<EnemyKillEvent>(OnEnemyKilled);
+
+        EnemiesLeft = 2;
     }
 
     void Update()
@@ -38,10 +42,20 @@ public class MainHudViewModel : MonoBehaviour, INotifyPropertyChanged
         }
     }
 
+    void OnEnemyKilled(EnemyKillEvent evt)
+    {
+        EnemiesLeft = evt.RemainingEnemyCount;
+    }
+
     private void Awake()
     {
         actorsManager = FindObjectOfType<ActorsManager>();
         weaponManager = FindObjectOfType<PlayerWeaponsManager>();
+    }
+
+    void OnDestroy()
+    {
+        EventManager.RemoveListener<EnemyKillEvent>(OnEnemyKilled);
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -70,6 +84,18 @@ public class MainHudViewModel : MonoBehaviour, INotifyPropertyChanged
             if (this.ammo == value) return;
             this.ammo = value;
             OnPropertyChanged();
+        }
+    }
+
+    public int EnemiesLeft
+    {
+        get => this.enemiesLeft;
+        set
+        {
+            if (this.enemiesLeft == value) return;
+            this.enemiesLeft = value;
+            // Perhaps we can catch this event in XAML to then fire the Rive trigger?
+            OnPropertyChanged("EnemiesLeftChange");
         }
     }
 
