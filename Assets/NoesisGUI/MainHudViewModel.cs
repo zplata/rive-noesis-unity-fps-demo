@@ -7,13 +7,10 @@ using Unity.FPS.Gameplay;
 using UnityEngine;
 
 public class MainHudViewModel : MonoBehaviour, INotifyPropertyChanged
-{
-
+{ 
     private ActorsManager actorsManager;
     private Health playerhealth;
     private PlayerWeaponsManager weaponManager;
-    private PlayerInputHandler m_InputHandler;
-    private WeaponController activeWeaponController;
 
     private float health;
     private float ammo;
@@ -25,47 +22,27 @@ public class MainHudViewModel : MonoBehaviour, INotifyPropertyChanged
         GetComponent<NoesisView>().Content.DataContext = this;
         playerhealth = actorsManager.Player.GetComponent<Health>();
         EventManager.AddListener<EnemyKillEvent>(OnEnemyKilled);
-        m_InputHandler = GetComponent<PlayerInputHandler>();
-        activeWeaponController = weaponManager.GetActiveWeapon();
-
-        EnemiesLeft = 2;
     }
 
     void Update()
     {
+        // Set 'health' Rive input value
         Health = playerhealth.CurrentHealth;
-        WeaponController activeThing = weaponManager.GetActiveWeapon();
-        if (activeThing != null && m_InputHandler != null)
+        var activeThing = weaponManager.GetActiveWeapon();
+        if (activeThing != null)
         {
-            /*            bool hasFired = activeThing.HandleShootInputs(
-                            m_InputHandler.GetFireInputDown(),
-                            m_InputHandler.GetFireInputHeld(),
-                            m_InputHandler.GetFireInputReleased());*/
-            bool hasFired = activeThing.CurrentAmmoRatio < 1.0f;
-            if (hasFired == true)
-            {
-                Debug.Log("HIT TRUE");
-                IsShooting = true;
-            }
-            else
-            {
-                IsShooting = false;
-            }
-        }
-        var ammoRatio = (int)Math.Round(activeThing.CurrentAmmoRatio * 100);
+            // Set 'shooting' Rive input value
+            IsShooting = activeThing.CurrentAmmoRatio < 1f;
 
-        if (ammoRatio >= 0)
-        {
-            Ammo = ammoRatio;
-        }
-        else
-        {
-            Ammo = 0;
+            // Set 'ammo' Rive input value
+            var ammoRatio = (int)Math.Round(activeThing.CurrentAmmoRatio * 100);
+            Ammo = ammoRatio >= 0 ? ammoRatio : 0;
         }
     }
 
     void OnEnemyKilled(EnemyKillEvent evt)
     {
+        // Set 'Enemies Left' Rive input value
         EnemiesLeft = evt.RemainingEnemyCount;
     }
 
@@ -73,7 +50,6 @@ public class MainHudViewModel : MonoBehaviour, INotifyPropertyChanged
     {
         actorsManager = FindObjectOfType<ActorsManager>();
         weaponManager = FindObjectOfType<PlayerWeaponsManager>();
-        m_InputHandler = GetComponent<PlayerInputHandler>();
     }
 
     void OnDestroy()

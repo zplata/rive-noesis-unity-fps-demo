@@ -736,57 +736,6 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 2729281214152228920}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1200472886 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7442781921941657531, guid: 761cdc9e4e883334cbdcea062d0befa7,
-    type: 3}
-  m_PrefabInstance: {fileID: 2729281214152228920}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1200472892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200472886}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29355477be96127469aed699dd82b4be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _xaml: {fileID: -8414808784256213763, guid: 345e6eb81b9c69c4bac5baf024ba880e, type: 3}
-  _texture: {fileID: 0}
-  _isPPAAEnabled: 0
-  _tessellationMaxPixelError: 0.2
-  _renderFlags: 16
-  _dpiScale: 1
-  _continuousRendering: 1
-  _enableExternalUpdate: 0
-  _enableKeyboard: 1
-  _enableMouse: 1
-  _enableTouch: 1
-  _enableActions: 0
-  _emulateTouch: 0
-  _useRealTimeClock: 0
-  _actions: {fileID: -944628639613478452, guid: 9f67088567c2b5040b62090c14e352e3,
-    type: 3}
-  _actionMap: Gamepad
-  _actionsRepeatDelay: 0.5
-  _actionsRepeatRate: 0.1
-  _xrTrackingOrigin: {fileID: 0}
-  _renderPassEvent: 550
---- !u!114 &1200472893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200472886}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91900bdf7c3c60142ae4c4f56efa1241, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1200472894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8694137560673455815, guid: 761cdc9e4e883334cbdcea062d0befa7,
