@@ -31,7 +31,7 @@ Most of the HUD camera UI comes from a XAML file parsed and rendered with Noesis
 
 1. Open the `Assets` dropdown in the top toolbar and select `Open Blend Project`
 2. Once Microsoft Blend opens, in the Solution Explorer, toggle the "Show All Files" icon button to show all files in the project
-3. In the `Assets` folder, locate the `rive-noesis-unity-fps-demoMainView.xaml` file
+3. In the `Assets/NoesisGUI` folder, locate the `RiveNoesisExampleMainView.xaml` file
 4. Right-click and select _Include in Project_
 5. Open the file to load it in the main stage and see the UI editor/XAML code
 
