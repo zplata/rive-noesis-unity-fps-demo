@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Unity.FPS.Game;
@@ -16,12 +17,17 @@ public class MainHudViewModel : MonoBehaviour, INotifyPropertyChanged
     private float ammo;
     private int enemiesLeft;
     private bool isShooting;
+    private bool isPlaying; // For objective complete
 
     void Start()
     {
         GetComponent<NoesisView>().Content.DataContext = this;
         playerhealth = actorsManager.Player.GetComponent<Health>();
         EventManager.AddListener<EnemyKillEvent>(OnEnemyKilled);
+
+        StartCoroutine(InitialEnemiesLeft());
+        IsShooting = false;
+        IsPlaying = false;
     }
 
     void Update()
@@ -29,21 +35,30 @@ public class MainHudViewModel : MonoBehaviour, INotifyPropertyChanged
         // Set 'health' Rive input value
         Health = playerhealth.CurrentHealth;
         var activeThing = weaponManager.GetActiveWeapon();
+
+        // Set 'shooting' Rive input value
+        IsShooting = Input.GetMouseButtonDown(0);
+
         if (activeThing != null)
         {
-            // Set 'shooting' Rive input value
-            IsShooting = activeThing.CurrentAmmoRatio < 1f;
-
             // Set 'ammo' Rive input value
             var ammoRatio = (int)Math.Round(activeThing.CurrentAmmoRatio * 100);
             Ammo = ammoRatio >= 0 ? ammoRatio : 0;
         }
     }
 
+    IEnumerator InitialEnemiesLeft()
+    {
+        yield return new WaitForSeconds(1);
+        EnemiesLeft = 2;
+    }
+
     void OnEnemyKilled(EnemyKillEvent evt)
     {
         // Set 'Enemies Left' Rive input value
         EnemiesLeft = evt.RemainingEnemyCount;
+
+        IsPlaying = EnemiesLeft <= 0;
     }
 
     private void Awake()
@@ -104,6 +119,18 @@ public class MainHudViewModel : MonoBehaviour, INotifyPropertyChanged
         {
             if (this.isShooting == value) return;
             this.isShooting = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public bool IsPlaying
+    {
+        get => this.isPlaying;
+        set
+        {
+            if (this.isPlaying == value) return;
+            this.isPlaying = value;
+            // Perhaps we can catch this event in XAML to then fire the Rive trigger?
             OnPropertyChanged();
         }
     }

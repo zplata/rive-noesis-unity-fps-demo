@@ -6,24 +6,28 @@
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:noesis="clr-namespace:NoesisGUIExtensions;assembly=Noesis.GUI.Extensions"
   mc:Ignorable="d"
-  x:Class="RiveNoesisExample.RiveNoesisExampleMainView"
-  d:DesignWidth="1830.948" d:DesignHeight="1071.713">
-    <Grid>
-        <noesis:RiveControl x:Name="Health" Source="game_health.riv" HorizontalAlignment="Left" Height="120" Margin="100,0,0,70" VerticalAlignment="Bottom" Width="400">
-            <noesis:RiveInput InputName="health" InputValue="{Binding Health}" />
-        </noesis:RiveControl>
-        <noesis:RiveControl x:Name="Ammo" Source="game_ammo.riv" HorizontalAlignment="Right" Height="400" Margin="0,0,100,70" VerticalAlignment="Bottom" Width="120">
-            <noesis:RiveInput InputName="ammo" InputValue="{Binding Ammo}" />
-            <noesis:RiveInput InputName="shooting" InputValue="{Binding IsShooting}" />
-        </noesis:RiveControl>
-        <noesis:RiveControl x:Name="Frame" Source="game_frame.riv"></noesis:RiveControl>
-        <noesis:RiveControl x:Name="EnemiesLeft" Source="game_enemies_left_v2.riv">
-            <noesis:RiveInput x:Name="EnemiesLeftInput" InputName="Enemies Left" InputValue="{Binding EnemiesLeft}" />
-        </noesis:RiveControl>
-        <b:Interaction.Triggers>
-            <b:PropertyChangedTrigger Binding="{Binding InputValue, ElementName=EnemiesLeftInput}">
-                <noesis:RiveTriggerAction TargetName="EnemiesLeft" TriggerName="Launch Text" />
-            </b:PropertyChangedTrigger>
-        </b:Interaction.Triggers>
-    </Grid>
+  x:Class="RiveNoesisExample.RiveNoesisExampleMainView">
+    <Viewbox>
+        <Grid Height="1080" Width="1920">
+            <b:Interaction.Triggers>
+                <b:PropertyChangedTrigger Binding="{Binding EnemiesLeft}">
+                    <noesis:RiveTriggerAction TargetName="EnemiesLeft" TriggerName="Launch Text" />
+                </b:PropertyChangedTrigger>
+            </b:Interaction.Triggers>
+            <noesis:RiveControl x:Name="Health" Source="game_health.riv" HorizontalAlignment="Left" Margin="100,0,0,70" VerticalAlignment="Bottom" Width="400" Stretch="Uniform">
+                <noesis:RiveInput InputName="health" InputValue="{Binding Health}" />
+            </noesis:RiveControl>
+            <noesis:RiveControl x:Name="Ammo" Source="game_ammo.riv" HorizontalAlignment="Right" Height="400" Margin="0,0,100,70" VerticalAlignment="Bottom" Stretch="Uniform">
+                <noesis:RiveInput InputName="ammo" InputValue="{Binding Ammo}" />
+                <noesis:RiveInput InputName="shooting" InputValue="{Binding IsShooting}" />
+            </noesis:RiveControl>
+            <noesis:RiveControl x:Name="Frame" Source="game_frame.riv"/>
+            <noesis:RiveControl x:Name="EnemiesLeft" Source="game_enemies_left_v2.riv">
+                <noesis:RiveInput x:Name="EnemiesLeftInput" InputName="Enemies Left" InputValue="{Binding EnemiesLeft}" />
+            </noesis:RiveControl>
+            <noesis:RiveControl x:Name="ObjectiveComplete" Source="objective_complete.riv" Margin="0,-10,-18.221,0">
+                <noesis:RiveInput InputName="isPlaying" InputValue="{Binding IsPlaying}"/>
+            </noesis:RiveControl>
+        </Grid>
+    </Viewbox>
 </UserControl>
