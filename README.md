@@ -10,6 +10,8 @@ Clone the above project onto your local machine and open the project through the
 
 You may need to configure a [Noesis Trial Key](https://www.noesisengine.com/trial/) in the Noesis Settings in Unity to play the game demo. See [here](https://www.noesisengine.com/docs/Gui.Core.Licensing.html#unity) for instructions on how to set the key in the Unity Noesis settings.
 
+To use Rive assets in Noesis, you need to download NoesisGUI v3.2+. More docs on their RiveControl can be found [here](https://www.noesisengine.com/docs/3.2/App.RiveControl._RiveControl.html)
+
 ### Seting the Scene
 
 You'll have to set the Main Scene from the FPS game template yourself. Follow the below steps to load it in:
